@@ -1,0 +1,45 @@
+# WebSocket Server:
+# Architecture:
+
+The WebSocket server is implemented using the ws library, which provides a straightforward way to handle WebSocket connections in Node.js.
+It uses a single WebSocket server to manage multiple connections.
+
+
+# Handling Multiple Connections:
+
+When a client connects to the WebSocket server, a new socket connection is established. This connection is then added to the set of connected clients.
+The server listens for messages from clients. When it receives a message from one client, it broadcasts that message to all other connected clients.
+Code Structure:
+
+The WebSocket server is initialized and listens for connections in app.js.
+Each connection is handled in the wss.on('connection', (socket) => {...}) callback. This is where the server sets up event listeners for incoming messages and handles disconnections.
+Design Decisions:
+
+The server broadcasts messages to all connected clients, ensuring that each message is received by everyone except the sender.
+
+**********************************************************************************************************************************************************************************************
+# RESTful API Server:
+
+Architecture:
+
+The RESTful API server is implemented using the express framework, It follows the RESTful principles of using HTTP methods (GET, POST, DELETE) to interact with resources.
+
+# Handling Endpoints: 
+The server defines three endpoints: POST /resources, GET /resources, and DELETE /resources/:id.
+Each endpoint is responsible for performing a specific action: creating, reading, or deleting a resource.
+
+# Code Structure:
+
+The API routes are defined in app.js using Express middleware. Each endpoint is associated with a specific route handler, which contains the logic for handling the request and sending an appropriate response.
+
+# Design Decisions:
+
+The server uses express.json() middleware to parse JSON requests, allowing clients to send JSON data in the request body.
+Error handling is implemented using a custom error handling middleware. In a production application, you might want to log errors, handle different types of errors, and provide meaningful error responses to clients.
+Libraries and Frameworks:
+
+
+# Future aspect:
+
+Both servers can be extended by adding more routes or WebSocket event handlers as needed. For example, you could add authentication, data validation, or additional resource manipulation endpoints to the API server.
+You could also implement more advanced features like message encryption, user authentication, or custom message handling in the WebSocket server. By using these libraries and following best practices, the codebase is structured in a way that makes it easy to maintain and extend in the future. 
