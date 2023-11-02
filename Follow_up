@@ -36,10 +36,12 @@ The API routes are defined in app.js using Express middleware. Each endpoint is 
 
 The server uses express.json() middleware to parse JSON requests, allowing clients to send JSON data in the request body.
 Error handling is implemented using a custom error handling middleware. In a production application, you might want to log errors, handle different types of errors, and provide meaningful error responses to clients.
-Libraries and Frameworks:
 
+# Libraries and Frameworks:
+express: A fast, unopinionated, minimalist web framework for Node.js. It provides a robust set of features for web and mobile applications.
+ws: A simple WebSocket implementation for Node.js.
 
 # Future aspect:
 
-Both servers can be extended by adding more routes or WebSocket event handlers as needed. For example, you could add authentication, data validation, or additional resource manipulation endpoints to the API server.
+For additional functionality in future, both servers can be extended by adding more routes or WebSocket event handlers as needed. For example, you could add authentication, data validation, or additional resource manipulation endpoints to the API server.
 You could also implement more advanced features like message encryption, user authentication, or custom message handling in the WebSocket server. By using these libraries and following best practices, the codebase is structured in a way that makes it easy to maintain and extend in the future. 
