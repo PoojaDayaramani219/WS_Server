@@ -20,7 +20,7 @@ The server broadcasts messages to all connected clients, ensuring that each mess
 **********************************************************************************************************************************************************************************************
 # RESTful API Server:
 
-Architecture:
+# Architecture:
 
 The RESTful API server is implemented using the express framework, It follows the RESTful principles of using HTTP methods (GET, POST, DELETE) to interact with resources.
 
